@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeenGPT - Medical Research Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Remachine+Script&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 10;
+            background: url('https://external-preview.redd.it/KBGQM3i01yP00u6iqLEDT-yKuEnIg8UHmop7jtbYKR4.jpg?auto=webp&s=c1f8afde4a66ef8397c121e9c2796a9020c48e0b') no-repeat center center fixed;
+            background-size: cover;
+            color: #e626e9;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .landing-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .landing-text {
+            font-size: 6em;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .scroll-down {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #e31a1a;
+            animation: bounce 1.5s infinite alternate;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-10px); }
+        }
+        
+        .qna-container {
+            width: 80%;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        textarea {
+            width: 100%;
+            height: 150px;
+            font-size: 1.2em;
+            border-radius: 10px;
+        }
+        
+        .ask-button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background: linear-gradient(45deg, #ffcc00, #ff6600);
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .ask-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .floating-box {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            animation: float 4s infinite alternate;
+        }
+        
+        @keyframes float {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-15px); }
+        }
+        
+        .floating-box:nth-child(1) { top: 10%; left: 10%; }
+        .floating-box:nth-child(2) { top: 50%; right: 10%; }
+        .floating-box:nth-child(3) { bottom: 80%; left: 20%; }
+        
+        .swinging-img {
+            width: 120px;
+            position: absolute;
+            animation: swing 2.5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes swing {
+            from { transform: rotate(-5deg); }
+            to { transform: rotate(5deg); }
+        }
+        
+        .swinging-img:nth-of-type(1) { top: 15%; left: 3%; }
+        .swinging-img:nth-of-type(2) { top: 55%; right: 5%; }
+        .swinging-img:nth-of-type(3) { bottom: 65%; left: 90%; }
+        
+        footer {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.9));
+            padding: 20px;
+            color: white;
+            position: relative;
+            clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        iframe {
+    background-color: #1a1a1a;
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+    </style>
+</head>
+<body>
+    <div class="landing-page">
+        <div class="landing-text">MeenGPT: Your friendly medical chatbot.</div>
+        <div class="scroll-down" onclick="document.getElementById('chat-section').scrollIntoView({ behavior: 'smooth' })">▼ Scroll Down to Start</div>
+    </div>
+    
+    <div class="floating-box">"Your health, your future! Stay informed."</div>
+    <div class="floating-box">"Advancements in AI are revolutionizing medicine!"</div>
+    <div class="floating-box">"Ask MeenGPT anything about medical research!"</div>
+    
+    <img class="swinging-img" src="https://wallpapercave.com/wp/wp7867753.jpg" alt="Medical Image 1">
+    <img class="swinging-img" src="https://c4.wallpaperflare.com/wallpaper/870/338/372/anatomy-muscles-medicine-wallpaper-thumb.jpg" alt="Medical Image 2">
+    <img class="swinging-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhmt7mW7_TGK3UvqTPCSnTpOxGrIrdFu5xeg&s" alt="Medical Image 3">
+    
+    <div class="qna-container" id="chat-section">
+        <h1>MeenGPT - Medical Research Chatbot</h1>
+        
+      
+      <iframe
+      src="https://app.thinkstack.ai/bot/index.html?chatbot_id=68126615f741e987a0eb3d94&type=inline"
+      frameborder="0"
+      width="100%"
+      height="100%"
+      style="min-height: 500px;">
+  </iframe>
+
+        
+    </div>
+    
+    <footer>
+        © 2025 MeenGPT | Powered by AI for Medical Research
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
